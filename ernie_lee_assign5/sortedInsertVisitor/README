@@ -1,0 +1,91 @@
+CS442 Design PPattern
+Spring 2014
+PROJECT 5 README FILE
+
+Due Date: Thursday, May 1, 2014
+Submission Date: Thursday, May 1, 2014
+Grace Period Used This Project: 0 day
+Grace Period Remaining: 0 Days
+Author: Ernie Lee
+e-mail: elee36@binghamton.edu
+
+PURPOSE:
+
+[
+	The purpose of this assignment is to create two visitors and apply it to two different elements.
+	The assignment allows the user to be more familiar with programming the visitor pattern and to become familiar with its uses
+]
+
+PERCENT COMPLETE:
+
+[
+	I believe I have completed 100% of this project.
+]
+
+PARTS THAT ARE NOT COMPLETE:
+
+[
+	I do not believe there are parts that are not complete.
+]
+
+BUGS:
+
+[
+	None
+]
+
+FILES:
+
+[
+	FileProcessor.java, The file that habdles all of the file functions needed for the program to run. It opens, and closes the file, as well as reading and returning the integer values from the text.
+	MyADT.java, Interface that provides the data structures the required methods needed for the visitors to apply their algorithm.
+	MyArray.java, file that internally holds an array that stores integers
+	MyVector.java, file that internally holds a vector that stores integers
+	SlowInsertVisitor.java, Visitor that has methods to take in their respective data structures and perform an algorithm on it. It first inserts the integer gathered from the text file to the back of the data structure and then sorts it.
+	SortedInsertVisitor.java, Visitor that has methods to take in their respective data structures and perform an algorithm on it. It takes the integer from the text file and directly inserts it in its respective index of the data structure.
+	Visitor.java, Interface that provides the visitors the required methods to perform their algorithm on their respective data structures.
+	Driver.java, the main file associated with the sortedInsertVisitor program that also contains main
+	README, the text file currently being read
+]
+
+SAMPLE OUTPUT:
+
+[
+	[java] 1 2 3 12 13 21 32 37 75 213 312 
+     [java] 1 2 3 12 13 21 32 37 75 213 312 
+     [java] 1 2 3 12 13 21 32 37 75 213 312 
+     [java] 1 2 3 12 13 21 32 37 75 213 312 
+	
+]
+
+TO COMPILE:
+
+[
+	Compile as: ant compile
+]
+
+TO RUN:
+
+[
+	To run driver:
+		Please run as: ant run
+]
+
+EXTRA CREDIT:
+
+[
+  N/A
+]
+
+
+BIBLIOGRAPHY:
+
+[
+
+	http://www.stackoverflow.com
+
+  	http://www.cs.binghamton.edu/~mgovinda/courses/csx42/px.html
+  
+   Freeman, Eric, Elisabeth Robson, Kathy Sierra, and Bert Bates. 
+   Head First Design Patterns. Sebastopol, CA: O'Reilly, 2004. Print.
+]

@@ -1,0 +1,70 @@
+
+<project name ="sortedInsertVisitors" default="compile" basedir=".">
+	<property name = "build.compiler" value = "modern"/>
+	<property name = "SRC" value = "src"/>
+	<property name = "BUILD" value = "build"/>
+	<property name = "CLASSES" value = "${BUILD}/classes"/>
+	<property name = "tarball" value = "ernie_lee_assign5.tar.gz"/>
+	<property name="docs" value="docs"/>
+	 
+	<target name = "compile"
+			depends = "sortedInsertVisitors"/>
+
+	<target name = "clean">
+		<delete dir = "${BUILD}"/>
+	</target>
+
+	<target name = "prepare">
+			<mkdir dir = "${BUILD}"/>
+			<mkdir dir = "${CLASSES}"/>
+	</target>
+
+	<target name = "sortedInsertVisitors" depends="prepare">
+		<javac srcdir = "${SRC}"
+				includes = "sortedInsertVisitors/**"
+				destdir = "${CLASSES}"
+				classpath = "${CLASSES}"
+				debug = "on"
+				optimize = "on"
+				deprecation = "off"/>
+	</target>
+
+	<target name = "tar">
+		<tar destfile = "./${tarball}"
+				basedir = "." compression = "gzip"
+				includes = "${SRC}/**, build.xml, README"/>
+	</target>
+
+	<target name = "jar">
+		<mkdir dir = "${BUILD}/jar"/>
+		<jar destfile = "${BUILD}/jar/sortedInsertVisitors.jar" basedir = "${BUILD}/classes">
+			<manifest>
+				<attribute name = "Main-Class" value = "sortedInsertVisitors.driver.Driver"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name = "run" depends = "jar">
+		<java jar = "${BUILD}/jar/sortedInsertVisitors.jar" fork = "true">
+			<arg value = "insert_integer.txt"/>	
+		</java>
+	</target>
+	
+	
+	<target name="init" description="setup project directories">
+	    <mkdir dir="${docs}"/>
+  	</target>
+
+  	<target name="docs" depends="init" description="generate documentation">
+		<mkdir dir="${docs}"/>
+
+   		<javadoc
+		       sourcepath="${SRC}"
+		       destdir="${docs}"
+		       classpath="${SRC}"
+  		 />
+
+	</target>
+	
+</project>
+
